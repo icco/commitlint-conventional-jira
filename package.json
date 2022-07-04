@@ -14,12 +14,15 @@
   "types": "./@types",
   "scripts": {
     "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
-    "watch": "cross-env NODE_ENV=development webpack -w"
+    "watch": "cross-env NODE_ENV=development webpack -w",
+    "test": "yarn build && jest"
   },
   "devDependencies": {
     "@commitlint/types": "^17.0.0",
     "@commitlint/utils": "^8.3.6",
+    "@types/jest": "^28.1.4",
     "cross-env": "^7.0.3",
+    "jest": "^28.1.2",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.3.1",
     "webpack": "^5.73.0",
