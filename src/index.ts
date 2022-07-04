@@ -1,5 +1,5 @@
 import { Commit, Plugin, RuleConfigCondition } from "@commitlint/types";
-import { ensureCase } from '@commitlint/ensure';
+import { case as ensureCase } from '@commitlint/ensure';
 import message from '@commitlint/message';
 
 const negated = (when?: string) => when === 'never';
@@ -27,7 +27,7 @@ export const commitlintConventionalJira: Plugin = {
         return check;
       });
 
-      const valid = checks.some((check) => {
+      const result = checks.some((check) => {
         if (check === undefined) {
           return false;
         }
@@ -36,8 +36,12 @@ export const commitlintConventionalJira: Plugin = {
         return negated(check.when) ? !r : r;
       });
 
-      return [valid, message([`subject must`, negated(when) ? `not` : null, `be ${list}`]), }
+      const list = checks.map((c) => c?.case).join(', ');
+
+      return [
+        negated(when) ? !result : result,
+        message([`subject must`, negated(when) ? `not` : null, `be ${list}`]),
+      ];
+    }
   }
 }
-
-export default commitlintConventionalJira
