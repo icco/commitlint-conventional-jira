@@ -1,0 +1,10 @@
+{
+  "name": "@icco/commitlint-conventional-jira",
+  "version": "1.0.0",
+  "description": "Conventional Commits with jira tickets at the front of their subjects.",
+  "main": "index.js",
+  "repository": "git@github.com:icco/commitlint-conventional-jira.git",
+  "author": "Nat Welch <nat@natwelch.com>",
+  "license": "MIT",
+  "private": false
+}
