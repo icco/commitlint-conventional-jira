@@ -1,10 +1,4 @@
-import lint from '@commitlint/lint';
-import { rules, parserPreset } from '.';
-
-const commitLint = async (message: string) => {
-	const preset = await require(parserPreset)();
-	return lint(message, rules, { ...preset });
-};
+import lint from "@commitlint/lint";
 
 const messages = {
 	invalidTypeEnum: 'foo: some message',
@@ -204,3 +198,8 @@ test('valid messages', async () => {
 		expect(result.warnings).toEqual([]);
 	});
 });
+
+function commitLint(message: string) {
+	return lint(message, rules, { ...preset });
+}
+
