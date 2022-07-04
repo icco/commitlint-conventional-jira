@@ -15,6 +15,7 @@
   "scripts": {
     "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack -w",
+    "lint": "prettier -w .",
     "test": "yarn build && jest"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "@types/jest": "^28.1.4",
     "cross-env": "^7.0.3",
     "jest": "^28.1.2",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
     "ts-loader": "^9.3.1",
@@ -38,5 +40,11 @@
   },
   "peerDependencies": {
     "@commitlint/lint": ">=7.6.0"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
   }
 }
