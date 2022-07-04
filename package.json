@@ -2,7 +2,6 @@
   "name": "@icco/commitlint-conventional-jira",
   "version": "1.0.0",
   "description": "Conventional Commits with jira tickets at the front of their subjects.",
-  "main": "index.js",
   "repository": "git@github.com:icco/commitlint-conventional-jira.git",
   "author": "Nat Welch <nat@natwelch.com>",
   "license": "MIT",
@@ -10,5 +9,11 @@
   "keywords": [
     "commitlint",
     "commitlintplugin"
-  ]
+  ],
+  "main": "./build/index.js",
+  "types": "./@types",
+  "scripts": {
+    "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
+    "watch": "cross-env NODE_ENV=development webpack -w"
+  }
 }
