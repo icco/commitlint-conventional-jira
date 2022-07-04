@@ -15,5 +15,9 @@
   "scripts": {
     "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack -w"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2"
   }
 }
