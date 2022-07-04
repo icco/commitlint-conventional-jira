@@ -19,5 +19,8 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@commitlint/format": "^17.0.0"
   }
 }
